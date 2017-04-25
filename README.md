@@ -1,2 +1,2 @@
 # LohikaTest
- java program which counts unique words in the file
+ java program which counts and sorts unique words in the file
