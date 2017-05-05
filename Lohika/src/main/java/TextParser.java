@@ -9,7 +9,7 @@ public class TextParser {
     public TextParser() {
     }
 
-    public static List<String> getListOfAllWordsFromString(String textToParse) {
+    private static List<String> getListOfAllWordsFromString(String textToParse) {
         List<String> wordsList = new ArrayList<>();
         String[] tokens = textToParse.split(",|\\.|\\s+");
         List<String> wordListTemp = new ArrayList<>(Arrays.asList(tokens));
@@ -18,14 +18,14 @@ public class TextParser {
         return wordsList;
     }
 
-    public static List<String> listOfWordsToLowerCase(List<String> wordsList) {
+    private static List<String> listOfWordsToLowerCase(List<String> wordsList) {
         List<String> wordsListLowerCase = new ArrayList<>();
         wordsList.stream().forEach(word -> wordsListLowerCase.add(word = word.toLowerCase()));
         return wordsListLowerCase;
 
     }
 
-    public static Set<String> getSetOfUniqueWordsFromList(List<String> listWithDuplicates) {
+    private static Set<String> getSetOfUniqueWordsFromList(List<String> listWithDuplicates) {
         Iterator<String> iterator = listWithDuplicates.iterator();
         Set<String> setOfUniqueWords = new TreeSet<>();
         while (iterator.hasNext()) {
@@ -39,7 +39,7 @@ public class TextParser {
 
     //    append quantity of word's entries into List after symbol "="
 //    for example: if word "object" appears twice we get word "object=2"
-    public static LinkedList<String> appendEntriesQuantityToEveryWord(Set<String> uniqueWords, List<String> allWords) {
+    private static LinkedList<String> appendEntriesQuantityToEveryWord(Set<String> uniqueWords, List<String> allWords) {
         LinkedList<String> linkedListWithEntries = new LinkedList<>();
         Iterator<String> iterator = uniqueWords.iterator();
         while (iterator.hasNext()) {
@@ -53,7 +53,7 @@ public class TextParser {
         return linkedListWithEntries;
     }
 
-    public static LinkedList<String> sortListByEntriesAndAlphabetically(LinkedList<String> listToSortWithEntriesQuantity) {
+    private static LinkedList<String> sortListByEntriesAndAlphabetically(LinkedList<String> listToSortWithEntriesQuantity) {
         Collections.sort(listToSortWithEntriesQuantity, new Comparator<String>() {
             @Override
             public int compare(String word1, String word2) {
@@ -72,7 +72,7 @@ public class TextParser {
         return listToSortWithEntriesQuantity;
     }
 
-    public static LinkedList<String> sortWordsInStringByEntriesAndAlphabetically(String textAsString) {
+    private static LinkedList<String> sortWordsInStringByEntriesAndAlphabetically(String textAsString) {
         List<String> listOfAllWordsFromString = TextParser.getListOfAllWordsFromString(textAsString);
         //changing words to lower case as asked in task
         List<String> listOfWordsToLowerCase = TextParser.listOfWordsToLowerCase(listOfAllWordsFromString);
