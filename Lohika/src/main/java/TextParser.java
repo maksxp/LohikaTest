@@ -52,8 +52,8 @@ public class TextParser {
         }
         return linkedListWithEntries;
     }
-
-    private static LinkedList<String> sortListByEntriesAndAlphabetically(LinkedList<String> listToSortWithEntriesQuantity) {
+    // TODO: Change to private after tests.
+    public static LinkedList<String> sortListByEntriesAndAlphabetically(LinkedList<String> listToSortWithEntriesQuantity) {
         Collections.sort(listToSortWithEntriesQuantity, new Comparator<String>() {
             @Override
             public int compare(String word1, String word2) {
