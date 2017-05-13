@@ -24,6 +24,5 @@ public class WordCount {
                 stream().
                 limit(numberOfPairsToPrint).
                 forEach(entry -> System.out.println(entry.getKey() + " = " + entry.getValue()));
-
     }
 }
