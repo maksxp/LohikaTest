@@ -8,15 +8,15 @@ public class Text {
     public Text() {
     }
 
+    public Text(String content) {
+        this.content = content;
+    }
+    
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Text(String content) {
         this.content = content;
     }
 
@@ -100,7 +100,6 @@ public class Text {
     }
 
     private LinkedList<String> sortLowCaseWordsInStringByEntriesAndAlphabetically() {
-        //changing words to lower case as asked in task
         List<String> listOfWordsToLowerCase = getListOfWordsToLowerCase();
         Set<String> setOfUniqueWords = getSetOfUniqueLowCaseWords();
         LinkedList<String> linkedListWithEntries = Text.appendEntriesQuantityToEveryWord(setOfUniqueWords, listOfWordsToLowerCase);
